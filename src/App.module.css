@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.root__container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(45deg, rgb(194, 235, 148), rgb(221, 175, 241));
+  z-index: 0;
+}
+
+/* .app__container::before, .app__container::after {
+  content: "";
+  position: absolute;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 100vw;
+  z-index: -1;
+}
+
+.app__container::before {
+  width: 200px;
+  aspect-ratio: 1;
+  top: 30%;
+  left: 5%;
+}
+
+.app__container::after {
+  width: 200px;
+  aspect-ratio: 1;
+  top: 30%;
+  left: 65%;
+} */
+
+.app__container {
+  display: flex;
+  flex-direction: column;
+  padding: 35px;
+  box-shadow: 0 0 25px #555;
+  border-radius: 25px;
+  backdrop-filter: blur(5px);
+  height: 490px;
+}

@@ -1,0 +1,108 @@
+.input__container {
+  margin: 0 0 15px 0;
+}
+
+.form {
+  display: flex;
+}
+
+.form * {
+  background-color: transparent;
+  border: none;
+  box-shadow: 0 0 5px #555;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.form > * {
+  background-color: transparent;
+  border: none;
+  box-shadow: 0 0 5px #555;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.form > *:not(:last-child) {
+  margin: 0 10px 0 0;
+}
+
+.form__input {
+  background-color: transparent;
+  border: none;
+  box-shadow: 0 0 5px #555;
+  width: 220px;
+  margin: 0 15px 0 0;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.form__btn {
+  width: 35px;
+  aspect-ratio: 1;
+  border-radius: 10px;
+  background-color: transparent;
+  border: none;
+  box-shadow: 0 0 5px #555;
+  transition: all 0.2s;
+}
+
+.form__btn:hover, .form__btn:focus  {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.form__btn:active {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.form__dropdown {
+  position: relative;
+  width: 35px;
+  aspect-ratio: 1;
+  background: url("https://cdn-icons-png.flaticon.com/512/32/32195.png") 12px 12px no-repeat;
+  background-size: 10px;
+}
+
+.form__dropdown:hover, .form__dropdown:focus  {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.dropdown__list {
+  display: block;
+  position: absolute;
+  list-style-type: none;
+  top: 100%;
+  left: -55px;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+.dropdown__list_hidden {
+  display: none;
+}
+
+.dropdown__item:not(:last-child) {
+  margin: 0 0 5px 0;
+}
+
+.dropdown__item:hover, .dropdown__item:focus  {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.dropdown__item_hidden {
+  display: none;
+}
+
+
+/* ===HOVER===FOCUS===ACTIVE=== */
+
+.form__btn:hover, .form__btn:focus, 
+.form__dropdown:hover, .form__dropdown:focus, 
+.dropdown__item:hover, .dropdown__item:focus {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.form__btn:active,
+.form__dropdown:active,
+.dropdown__item:active {
+  background-color: rgba(255, 255, 255, 0.4);
+}
