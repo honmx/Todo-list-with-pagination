@@ -2,6 +2,7 @@ import React from "react"
 import { useDispatch, useSelector } from "react-redux";
 import s from "./Pagination.module.css"
 import { setPage } from "../../services/setPage";
+import { useEffect } from "react";
 
 const Pagination = (props) => {
 
@@ -12,7 +13,10 @@ const Pagination = (props) => {
   });
 
   // debugger;
-  // if (props.currentPage > pages.length && pages.length !== 0) dispatch(setPage(1));
+
+  useEffect(() => {
+    if (props.currentPage > pages.length && pages.length !== 0) dispatch(setPage(pages.length));
+  }, [pages]);
 
   const handleClick = (e) => {
     dispatch(setPage(Number(e.target.textContent)));
