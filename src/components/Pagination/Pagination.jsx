@@ -11,7 +11,8 @@ const Pagination = (props) => {
     return i % 5 === 0;
   });
 
-  if (props.currentPage >= pages.length + 1 && pages.length > 1) dispatch(setPage(1));
+  // debugger;
+  // if (props.currentPage > pages.length && pages.length !== 0) dispatch(setPage(1));
 
   const handleClick = (e) => {
     dispatch(setPage(Number(e.target.textContent)));

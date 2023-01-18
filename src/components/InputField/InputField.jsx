@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import s from "./InputField.module.css"
 import { createTodo } from "../../services/createTodo";
 import { setFilter } from "../../services/setFilter";
+import { setPage } from "../../services/setPage";
+import { useEffect } from "react";
 
 const InputField = (props) => {
 
@@ -22,9 +24,24 @@ const InputField = (props) => {
     setValue("");
   }
 
-  const handleDropdownClick = () => {
-    setDropdownVisible(!dropdownVisible);
+  // const handleDropdownClick = () => {
+  //   setDropdownVisible(!dropdownVisible);
+  // }
+
+  const handleFilterClick = (filter) => {
+    dispatch(setFilter(filter));
+    dispatch(setPage(1));
   }
+
+  useEffect(() => {
+    const handleClick = (e) => {
+      if (!e.target.className.includes("form__dropdown")) setDropdownVisible(false);
+    }
+
+    window.addEventListener("click", handleClick);
+
+    return () => window.removeEventListener("click", handleClick);
+  }, []);
 
   return (
     <div className={s.input__container}>
@@ -36,14 +53,14 @@ const InputField = (props) => {
           onChange={(e) => setValue(e.target.value)}
         />
         <button className={s.form__btn} type="submit">+</button>
-        <div className={s.form__dropdown} onClick={handleDropdownClick}>
+        <div className={s.form__dropdown} onClick={(e) => setDropdownVisible(!dropdownVisible)}>
           <ul className={dropdownVisible ? s.dropdown__list : s.dropdown__list_hidden}>
             {
               filters.map((filter, i) => {
-                return <li onClick={(e) => dispatch(setFilter(filter))}
+                return <li onClick={(e) => handleFilterClick(filter)}
                   className={dropdownVisible ? s.dropdown__item : s.dropdown__item_hidden}
                   key={i}
-                  >
+                >
                   {filter}
                 </li>
               })
